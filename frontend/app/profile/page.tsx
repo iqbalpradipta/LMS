@@ -12,14 +12,14 @@ function Profile() {
           </span>
         </div>
 
-        <div className="grid grid-rows-2 grid-flow-col gap-4">
-          <div className="row-span-2 text-md text-gray-500">Avatar</div>
+        <div className="grid grid-rows-2 grid-flow-col gap-4 ms-12">
+          <div className="row-span-2 text-sm font-medium text-gray-700 pt-2">Avatar</div>
           <img
-            className="col-span-2 inline-block size-15.5 rounded-full"
+            className="col-span-2 ms-25 inline-block size-15.5 rounded-full"
             src="https://yt3.ggpht.com/JIBs02-aKcwQNIArFarmn0grSFL4pxLz-ZsM5orQ2U54ho91LJrN_Q0wHRRp5K6jlkKnyNTs=s176-c-k-c0x00ffffff-no-rj-mo"
             alt="Avatar"
           />
-          <div className="grid grid-cols-12 gap-2 w-80 h-10">
+          <div className="grid grid-cols-12 gap-2 ms-25 w-80 h-10">
             <button
               type="button"
               className="py-3 px-4 gap-2 col-span-6 inline-flex items-center text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
