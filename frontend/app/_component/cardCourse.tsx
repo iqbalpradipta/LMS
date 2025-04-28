@@ -24,7 +24,7 @@ const mocks = [
 
 function CardCourse() {
   return (
-    <div className="grid grid-cols-3 gap-4 relative left-6 p-5">
+    <div className="grid grid-cols-3 gap-4 relative mt-2">
       {mocks.map((data, index) => (
         <div
           key={index}
