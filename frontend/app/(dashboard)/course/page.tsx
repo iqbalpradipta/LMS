@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from "react";
-import CardCourse from "../_component/cardCourse";
+import CardCourse from "../../_component/cardCourse";
 
 function Course() {
   const [searchQuery, setSearchQuery] = useState<string>("");

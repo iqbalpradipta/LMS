@@ -1,5 +1,5 @@
 import React from "react";
-import CardBenefit from "./_component/cardBenefit";
+import CardBenefit from "../_component/cardBenefit";
 import Link from "next/link";
 
 function Page() {
