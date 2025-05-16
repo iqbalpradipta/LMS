@@ -3,18 +3,21 @@ import React from "react";
 
 const mocks = [
   {
+    id: 1,
     title: "Fullstack Developer",
     description:
       "Learn about all about tools web developer to become Fullstack Developer",
     totalCourse: "15",
   },
   {
+    id: 2,
     title: "Fullstack Developer",
     description:
       "Learn about all about tools web developer to become Fullstack Developer",
     totalCourse: "15",
   },
   {
+    id: 3,
     title: "Fullstack Developer",
     description:
       "Learn about all about tools web developer to become Fullstack Developer",
@@ -49,7 +52,7 @@ function CardCourse() {
               type="button"
               className="mt-2 text-sm w-20 h-10 bg-blue-500 text-white border-1 rounded-xl shadow-md focus:outline-hidden dark:text-neutral-500 hover:bg-blue-800"
             >
-              <Link href="/course">Click Here!</Link>
+              <Link href={`/course/${data.id}`}>Click Here!</Link>
             </button>
           </div>
         </div>
