@@ -1,5 +1,6 @@
 import React from "react";
 import CardCourse from "../../_component/cardCourse";
+import Link from "next/link";
 
 function Dashboard() {
   return (
@@ -7,7 +8,7 @@ function Dashboard() {
 
       <div className="p-5">
         <h1 className="text-2xl font-bold text-gray-500">
-          Selamat Pagi, Kler ... !
+          Selamat Pagi, Iqbal Pradipta !
         </h1>
         <p className="text-sm text-gray-700 mt-1">
           Selamat datang di halaman utama LMS. Semua progress kamu tersimpan
@@ -25,12 +26,13 @@ function Dashboard() {
           <div className="p-5 border-1 rounded-lg h-auto shadow-lg shadow-gray-300 border-gray-300">
             <p className="text-md text-gray-500">Diskusi Bersama Teman</p>
             <div>
-              <button
+              <Link
+                href={"/chat"}
                 type="button"
                 className="py-3 px-4 inline-flex items-center bg-blue-500 text-white gap-x-2 text-sm font-medium rounded-lg border focus:outline-hidden dark:text-neutral-500 hover:bg-blue-800"
               >
                 Ayo diskusi dengan teman dan guru! 
-              </button>
+              </Link>
             </div>
           </div>
         </div>

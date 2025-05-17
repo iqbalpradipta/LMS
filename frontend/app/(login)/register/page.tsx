@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function login() {
@@ -8,16 +9,16 @@ function login() {
           <div className="p-4 sm:p-7">
             <div className="text-center">
               <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">
-                Sign in
+                Sign Up
               </h1>
               <p className="mt-2 text-sm text-gray-600 dark:text-neutral-400">
-                Don't have an account yet?
-                <a
+                You Have already Account&nbsp;
+                <Link
                   className="text-blue-600 decoration-2 hover:underline focus:outline-hidden focus:underline font-medium dark:text-blue-500"
-                  href="../examples/html/signup.html"
+                  href="/login"
                 >
-                  Sign up here
-                </a>
+                  Sign In here
+                </Link>
               </p>
             </div>
 
@@ -50,7 +51,7 @@ function login() {
                     fill="#EB4335"
                   />
                 </svg>
-                Sign in with Google
+                Sign up with Google
               </button>
 
               <div className="py-3 flex items-center text-xs text-gray-400 uppercase before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-neutral-500 dark:before:border-neutral-600 dark:after:border-neutral-600">
@@ -109,12 +110,6 @@ function login() {
                       >
                         Password
                       </label>
-                      <a
-                        className="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-hidden focus:underline font-medium dark:text-blue-500"
-                        href="../examples/html/recover-account.html"
-                      >
-                        Forgot password?
-                      </a>
                     </div>
                     <div className="relative">
                       <input
@@ -147,32 +142,11 @@ function login() {
                   </div>
                   {/* End Form Group */}
 
-                  {/* Checkbox */}
-                  <div className="flex items-center">
-                    <div className="flex">
-                      <input
-                        id="remember-me"
-                        name="remember-me"
-                        type="checkbox"
-                        className="shrink-0 mt-0.5 border-gray-200 rounded-sm text-blue-600 focus:ring-blue-500 dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                      />
-                    </div>
-                    <div className="ms-3">
-                      <label
-                        htmlFor="remember-me"
-                        className="text-sm dark:text-white"
-                      >
-                        Remember me
-                      </label>
-                    </div>
-                  </div>
-                  {/* End Checkbox */}
-
                   <button
                     type="submit"
                     className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                   >
-                    Sign in
+                    Sign Up
                   </button>
                 </div>
               </form>

@@ -26,6 +26,12 @@ function Navbar() {
               Messages
             </Link>
             <Link
+              href="/chat"
+              className="block text-gray-300 hover:text-black transition"
+            >
+              Discussion Area
+            </Link>
+            <Link
               href="/profile"
               className="block text-gray-300 hover:text-black transition"
             >

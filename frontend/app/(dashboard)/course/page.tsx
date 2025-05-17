@@ -18,7 +18,7 @@ function Course() {
     <div className="container mx-auto">
       <div className="max-w-full p-6 bg-white shadow-md h-full">
         <h2 className="text-xl font-bold text-gray-800 mb-4">
-          Cari Course...
+          Cari Pelajaran ...
         </h2>
 
         <div className="relative flex items-center">

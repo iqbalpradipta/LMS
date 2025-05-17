@@ -4,23 +4,22 @@ import React from "react";
 const mocks = [
   {
     id: 1,
-    title: "Fullstack Developer",
-    description:
-      "Learn about all about tools web developer to become Fullstack Developer",
+    title: "Matematika",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ducimus nemo inventore. Dignissimos natus voluptatem alias repellendus id, in odit amet sed possimus qui numquam quam facilis necessitatibus quos voluptate nobis commodi dolorem. Explicabo, qui?",
     totalCourse: "15",
   },
   {
     id: 2,
-    title: "Fullstack Developer",
+    title: "Fisika",
     description:
-      "Learn about all about tools web developer to become Fullstack Developer",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt nobis quis assumenda, fugiat maxime quos! Sequi maiores libero ratione earum, dolorem sed quis blanditiis officia, omnis soluta consequatur odit illum ab ea dignissimos. Ea repellat, maiores consequatur magni ab nesciunt perferendis molestiae facere rem tempora ipsam iste tenetur quo adipisci.",
     totalCourse: "15",
   },
   {
     id: 3,
-    title: "Fullstack Developer",
+    title: "Bahasa Indonesia",
     description:
-      "Learn about all about tools web developer to become Fullstack Developer",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, architecto tempore laboriosam provident iure aliquam dicta aliquid, blanditiis ipsam aut excepturi, sunt beatae necessitatibus corporis! Pariatur ea non quos nobis.",
     totalCourse: "15",
   },
 ];
