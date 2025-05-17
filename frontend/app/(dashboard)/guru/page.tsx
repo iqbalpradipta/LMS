@@ -1,6 +1,6 @@
 import React from "react";
 
-let mocks = [
+const mocks = [
     {
         id: 1,
         name: "Alifia",

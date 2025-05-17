@@ -1,4 +1,3 @@
-import Sidebar from "@/app/_component/_courseDetailComponent/sidebar";
 import "../../../style.css";
 
 export const metadata = {
