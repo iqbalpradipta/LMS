@@ -38,7 +38,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onSelectContent, selectedContent }) =
            <span className="text-sm font-bold">Kembali ke Dashboard</span>  
         </Link>
         <div className="mt-8">
-          <p className="font-semibold">Course</p>
+          <p className="font-semibold">Materi Pelajaran</p>
           {mocks.map((data, index) => {
             const isSelected = data.title === selectedContent.title
             return (

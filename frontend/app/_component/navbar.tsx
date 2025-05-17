@@ -17,7 +17,7 @@ function Navbar() {
               href="/course"
               className="block text-gray-300 hover:text-black transition"
             >
-              Courses
+              Materi Pelajaran
             </Link>
             <Link
               href="/messages"
@@ -36,6 +36,12 @@ function Navbar() {
               className="block text-gray-300 hover:text-black transition"
             >
               Profile
+            </Link>
+            <Link
+              href="/guru"
+              className="block text-gray-300 hover:text-black transition"
+            >
+              Guru Area
             </Link>
           </nav>
         </div>

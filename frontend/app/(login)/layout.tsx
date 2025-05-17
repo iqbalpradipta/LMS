@@ -1,7 +1,7 @@
 import "../style.css";
 
 export const metadata = {
-  title: "E-Learning with Iqbal",
+  title: "Login - LMS",
 };
 
 export default function RootLayout({
