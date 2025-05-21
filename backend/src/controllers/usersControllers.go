@@ -4,6 +4,7 @@ import (
 	"strconv"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/iqbalpradipta/lms/tree/main/backend/src/middlewares"
 	"github.com/iqbalpradipta/lms/tree/main/backend/src/model"
 	"github.com/iqbalpradipta/lms/tree/main/backend/src/services"
 	"golang.org/x/crypto/bcrypt"
@@ -139,4 +140,37 @@ func (ctrl *UserController) DeleteUser(c *fiber.Ctx) error {
 		"Message": "Success Delete User",
 	})
 	
+}
+
+func (ctrl *UserController) Login(c *fiber.Ctx) error {
+	var req model.LoginUser
+	if err := c.BodyParser(&req); err != nil {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"error": "Invalid request payload",
+		})
+	}
+
+	user, err := ctrl.Service.GetUserEmail(req.Email)
+	if err != nil {
+		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{
+			"error": "Invalid email or password",
+		})
+	}
+
+	if err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(req.Password)); err != nil {
+		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{
+			"error": "Invalid email or password",
+		})
+	}
+
+	token, err := middlewares.GenerateJWT(int(user.ID), user.Email); if err != nil {
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+			"error": "Failed to generate token JWT",
+		})
+	}
+
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{
+		"message": "Login successful",
+		"token": token,
+	})
 }

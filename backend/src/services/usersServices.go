@@ -54,3 +54,10 @@ func (s *UserService) UpdateUser(id int, data *model.User) error {
 func (s *UserService) DeleteUser(id int) error {
 	return s.DB.Delete(&model.User{}, id).Error
 }
+
+func (s *UserService) GetUserEmail(email string) (*model.User, error) {
+	var user model.User
+
+	err := s.DB.First(&user, "email = ?", email).Error
+	return &user, err
+}
