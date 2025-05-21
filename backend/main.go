@@ -5,7 +5,10 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/iqbalpradipta/lms/tree/main/backend/src/config/db"
+	"github.com/iqbalpradipta/lms/tree/main/backend/src/controllers"
 	"github.com/iqbalpradipta/lms/tree/main/backend/src/migration"
+	"github.com/iqbalpradipta/lms/tree/main/backend/src/routes"
+	"github.com/iqbalpradipta/lms/tree/main/backend/src/services"
 )
 
 func main() {
@@ -17,6 +20,12 @@ func main() {
 		fmt.Println("Error migrating database:", err)
 		return
 	}
+
+	userService := services.NewUserService(db)
+
+	userController := controllers.NewUserController(userService)
+
+	routes.Routes(app, userController)
 
 	app.Listen(":8000")
 }
