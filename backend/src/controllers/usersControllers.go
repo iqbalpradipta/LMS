@@ -24,7 +24,7 @@ func (ctrl *UserController) CreateUser(c *fiber.Ctx) error {
 	user := new(model.User)
 	if err := c.BodyParser(user); err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-			"error": "Invalid request payload",
+			"error": "Invalid Request",
 		})
 	}
 	hashPassword, err := bcrypt.GenerateFromPassword([]byte(user.Password), bcrypt.DefaultCost)
@@ -111,6 +111,10 @@ func (ctrl *UserController) UpdateUser(c *fiber.Ctx) error {
 		user.Password = userData.Password
 	} else {
 		user.Password = string(hashPassword)
+	}
+	
+	if user.RoleID == nil {
+		user.RoleID = userData.RoleID
 	}
 
 	if err = ctrl.Service.UpdateUser(idConv, user); err != nil {

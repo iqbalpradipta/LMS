@@ -7,7 +7,7 @@ type User struct {
 	Name     string `json:"name" gorm:"not null"`
 	Email    string `json:"email" gorm:"not null;unique"`
 	Password string `json:"password" gorm:"not null"`
-	RoleID   *uint   `json:"role_id"`
+	RoleID   *uint  `json:"role_id"`
 	Role     Role   `json:"role" gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
 
 	ClassUsers []ClassUser   `json:"class_users" gorm:"foreignKey:UserID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`

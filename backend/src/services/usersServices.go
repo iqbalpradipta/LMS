@@ -16,7 +16,7 @@ func NewUserService(db *gorm.DB) *UserService {
 }
 
 func (s *UserService) CreateUser(user *model.User) error {
-	if err := s.DB.Create(user).Error; err != nil {
+	if err := s.DB.Preload("Role").Create(user).Error; err != nil {
 		return err
 	}
 	return nil
@@ -25,14 +25,14 @@ func (s *UserService) CreateUser(user *model.User) error {
 func (s *UserService) GetAllUsers() ([]model.User, error) {
 	var users []model.User
 
-	err := s.DB.Find(&users).Error;
+	err := s.DB.Preload("Role").Find(&users).Error;
 	return users, err
 }
 
 func (s *UserService) GetUserById(id int) (*model.User, error) {
 	var user model.User
 
-	err := s.DB.First(&user, id).Error
+	err := s.DB.Preload("Role").First(&user, id).Error
 	return &user, err
 }
 
@@ -46,9 +46,9 @@ func (s *UserService) UpdateUser(id int, data *model.User) error {
 	user.Name = data.Name
 	user.Email = data.Email
 	user.Password = data.Password
-	user.Role = data.Role
+	user.RoleID = data.RoleID
 	
-	return s.DB.Save(&user).Error
+	return s.DB.Preload("Role").Save(&user).Error
 }
 
 func (s *UserService) DeleteUser(id int) error {
