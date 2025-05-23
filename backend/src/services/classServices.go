@@ -42,3 +42,24 @@ func (s *ClassService) GetClassById(id int) (*model.Class, error) {
 
 	return &class, nil
 }
+
+func (s *ClassService) UpdateClass(id int, data *model.Class) error {
+	var class model.Class
+
+	if err := s.DB.First(&class, id).Error; err != nil {
+		return err
+	}
+
+	class.Name = data.Name
+	class.Major = data.Major
+
+	return s.DB.Save(&class).Error
+}
+
+func (s *ClassService)DeleteClass(id int) error {
+	if err := s.DB.Delete(&model.Class{}, id).Error; err != nil {
+		return err
+	}
+
+	return nil
+}
